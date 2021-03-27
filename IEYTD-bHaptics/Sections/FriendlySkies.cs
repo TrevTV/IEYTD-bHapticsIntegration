@@ -58,8 +58,7 @@ namespace BHapticsSupport.Sections
         {
             Globals.Msg("Cargo door open");
 
-            HapticClip clip = HapticUtils.GetHapticClip("StunGrenade");
-            clip.Play();
+            GenericGameEvents.Explode(null);
         }
 
         public static void TurnIgnitionOn()

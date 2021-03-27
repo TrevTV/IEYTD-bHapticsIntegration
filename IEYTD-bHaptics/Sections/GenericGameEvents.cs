@@ -141,20 +141,20 @@ namespace BHapticsSupport.Sections
             VestHapticClip clip = HapticUtils.GetHapticClip<VestHapticClip>("StunGrenade");
             PlayerAliveStateData playerAliveStateData = ReflectionTools.GetValueFromObject<PlayerAliveStateData>(__instance, "_data");
 
-            clip.Duration = playerAliveStateData.stunBlurCurve.keys[playerAliveStateData.stunBlurCurve.length - 1].time + 5;
-            clip.Intensity = 0.75f;
-            clip.Play();
+            float duration = playerAliveStateData.stunBlurCurve.keys[playerAliveStateData.stunBlurCurve.length - 1].time + 5;
+            float intensity = 0.75f;
+            clip.Play(intensity, duration);
         }
 
-        public static void Explode(Explosive explosiveProperty)
+        public static void Explode(Explosive explosiveProperty, bool ambient = false, bool headAndArms = true)
         {
-            bool rtrn = explosiveProperty?.stun ?? false;
-            if (rtrn) return;
+            // essentially, if `stun` is null, it'll return false
+            if (explosiveProperty?.stun ?? false) return;
 
             Globals.Msg("Explode!");
 
-            VestHapticClip clip = HapticUtils.GetHapticClip<VestHapticClip>("StunGrenade");
-            clip.Play();
+            HapticClip vestClip = HapticUtils.GetHapticClip(ambient ? "AmbientExplosion" : "StunGrenade");
+            vestClip.Play();
         }
 
         public static void WearObject(ActiveInteractableEntity entity, Transform joint)

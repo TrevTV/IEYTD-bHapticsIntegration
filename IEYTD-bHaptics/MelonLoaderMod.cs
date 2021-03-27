@@ -26,7 +26,6 @@ using SchellGames.Spectre.Assets.Scripts.Interactables.TrainLevel.ArmoredCarAssa
 using SchellGames.Spectre.Assets.Scripts.Interactables.TrainLevel.PlaneAssassin;
 using SchellGames.Spectre.Assets.Scripts.Interactables;
 using SchellGames.Spectre.Assets.Scripts.Interactables.SpaceLevel;
-using SchellGames.Spectre.Assets.Scripts.Interactables.SubLevel.ControlPanel;
 
 #if EXPLORER
 using UnityExplorer;
@@ -40,7 +39,7 @@ namespace BHapticsSupport
         public const string Author = "trev"; // Author of the Mod.  (Set as null if none)
         public const string Company = null; // Company that made the Mod.  (Set as null if none)
         public const string Version = "0.1.1"; // Version of the Mod.  (MUST BE SET)
-        public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
+        public const string DownloadLink = "https://trevtv.github.io/ieytd/"; // Download Link for the Mod.  (Set as null if none)
     }
 
     public class HapticsMain : MelonMod

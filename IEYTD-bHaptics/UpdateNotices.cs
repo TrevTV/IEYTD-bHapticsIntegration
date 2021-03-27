@@ -1,24 +1,17 @@
 ﻿using System;
-using System.IO;
 using System.Net;
-using System.Net.Security;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 using MelonLoader;
 
 namespace BHapticsSupport
 {
     internal static class UpdateNotices
     {
-        //private static WebClient webClient = new WebClient();
-        //private static string versionUrl = "https://trevtv.github.io/ieytd/latest/";
-
-        [DllImport("update_checker.dll")]
-        public static extern string GetLatestVersion();
+        private static WebClient webClient = new WebClient();
+        private static string versionUrl = "https://trevtv.github.io/ieytd/latest/";
 
         public static void RunUpdateCheck()
         {
-            /*string versionResponse;
+            string versionResponse = "if you're reading this, 1. why, 2. it doesn't work due to mono blocking all certificates by default";
 
             try
             {
@@ -28,9 +21,7 @@ namespace BHapticsSupport
             {
                 PrintError(e.Message);
                 return;
-            }*/
-
-            string versionResponse = GetLatestVersion();
+            }
 
             MelonLogger.Msg("Current version: " + BuildInfo.Version);
             MelonLogger.Msg("Remote version: " + versionResponse);
