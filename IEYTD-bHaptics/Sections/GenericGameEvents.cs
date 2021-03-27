@@ -57,8 +57,7 @@ namespace BHapticsSupport.Sections
             if (!((LevelManager.Instance.playerEntity.transform.position - __instance.transform.position).magnitude <= __instance.GetData().explosive.radius))
             {
                 Globals.Msg("ambient explosion");
-                HapticClip clip = HapticUtils.GetHapticClip("AmbientExplosion");
-                clip.Play();
+                Explode(null, true);
             }
         }
 
