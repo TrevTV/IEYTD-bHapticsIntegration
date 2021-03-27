@@ -57,14 +57,12 @@ namespace BHapticsSupport.Sections
         public static void CargoDoorOpen()
         {
             Globals.Msg("Cargo door open");
-
             GenericGameEvents.Explode(null);
         }
 
         public static void TurnIgnitionOn()
         {
             Globals.Msg("Car ignition");
-
             HapticClip clip = HapticUtils.GetHapticClip("CarIgnition");
             clip.Play();
         }

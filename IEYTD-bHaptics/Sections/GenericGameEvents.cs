@@ -138,7 +138,7 @@ namespace BHapticsSupport.Sections
         {
             Globals.Msg("stunned");
 
-            VestHapticClip clip = HapticUtils.GetHapticClip<VestHapticClip>("StunGrenade");
+            HapticClip clip = HapticUtils.GetHapticClip("StunGrenade");
             PlayerAliveStateData playerAliveStateData = ReflectionTools.GetValueFromObject<PlayerAliveStateData>(__instance, "_data");
 
             float duration = playerAliveStateData.stunBlurCurve.keys[playerAliveStateData.stunBlurCurve.length - 1].time + 5;
@@ -155,6 +155,14 @@ namespace BHapticsSupport.Sections
 
             HapticClip vestClip = HapticUtils.GetHapticClip(ambient ? "AmbientExplosion" : "StunGrenade");
             vestClip.Play();
+
+            if (headAndArms)
+            {
+                HapticClip headClip = HapticUtils.GetHapticClip("Explosion_Head");
+                HapticClip armsClip = HapticUtils.GetHapticClip("Explosion_Arms");
+                headClip.Play(ambient ? 0.5f : 1f);
+                armsClip.Play(ambient ? 0.5f : 1f);
+            }
         }
 
         public static void WearObject(ActiveInteractableEntity entity, Transform joint)

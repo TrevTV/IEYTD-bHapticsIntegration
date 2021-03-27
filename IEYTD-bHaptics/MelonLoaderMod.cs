@@ -1,6 +1,4 @@
-﻿// #define EXPLORER
-
-using MelonLoader;
+﻿using MelonLoader;
 using Bhaptics.Tact.Unity;
 using Harmony;
 using UnityEngine;
@@ -26,10 +24,6 @@ using SchellGames.Spectre.Assets.Scripts.Interactables.TrainLevel.ArmoredCarAssa
 using SchellGames.Spectre.Assets.Scripts.Interactables.TrainLevel.PlaneAssassin;
 using SchellGames.Spectre.Assets.Scripts.Interactables;
 using SchellGames.Spectre.Assets.Scripts.Interactables.SpaceLevel;
-
-#if EXPLORER
-using UnityExplorer;
-#endif
 
 namespace BHapticsSupport
 {
