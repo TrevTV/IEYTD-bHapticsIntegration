@@ -57,7 +57,7 @@ namespace BHapticsSupport
             Harmony.Patch(AccessTools.Method(typeof(FlareGunState), "Use"), new HarmonyMethod(typeof(GenericGameEvents).GetMethod("GunFire")));
 
             Harmony.Patch(AccessTools.Method(typeof(PlayerAliveState), "Stun"), null, new HarmonyMethod(typeof(GenericGameEvents).GetMethod("Stun")));
-            Harmony.Patch(AccessTools.Method(typeof(PlayerAliveState), "DeathByExplosion"), null, new HarmonyMethod(typeof(GenericGameEvents).GetMethod("Explode")));
+            Harmony.Patch(AccessTools.Method(typeof(PlayerAliveState), "DeathByExplosion"), null, new HarmonyMethod(typeof(GenericGameEvents).GetMethod("DeathByExplosion")));
             Harmony.Patch(AccessTools.Method(typeof(PlayerAliveState), "WearEntity"), null, new HarmonyMethod(typeof(GenericGameEvents).GetMethod("WearObject")));
             Harmony.Patch(AccessTools.Method(typeof(PlayerAliveState), "Eat"), null, new HarmonyMethod(typeof(GenericGameEvents).GetMethod("Eat")));
             Harmony.Patch(AccessTools.Method(typeof(PlayerAliveState), "DoDeath"), null, new HarmonyMethod(typeof(GenericGameEvents).GetMethod("DoDeath")));

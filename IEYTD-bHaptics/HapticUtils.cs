@@ -7,11 +7,11 @@ namespace BHapticsSupport
 {
     public static class HapticUtils
     {
-        public static HapticClip GetHapticClip(string name, bool onlyReturnWhenNoneArePlaying = false)
+        public static HapticClip GetHapticClip(string name, bool onlyReturnWhenNotPlaying = false)
         {
             HapticClip clip = Globals.haptics[name];
 
-            if (onlyReturnWhenNoneArePlaying && clip.IsPlaying()) return null;
+            if (onlyReturnWhenNotPlaying && clip.IsPlaying()) return null;
 
             clip.ResetValues();
             return clip;

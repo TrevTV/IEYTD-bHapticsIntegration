@@ -146,6 +146,8 @@ namespace BHapticsSupport.Sections
             clip.Play(intensity, duration);
         }
 
+        public static void DeathByExplosion(Explosive explosiveProperty) => Explode(explosiveProperty);
+
         public static void Explode(Explosive explosiveProperty, bool ambient = false, bool headAndArms = true)
         {
             // essentially, if `stun` is null, it'll return false
@@ -226,6 +228,7 @@ namespace BHapticsSupport.Sections
                             if (!(currentRepeatAmount >= 5)) break;
                             HapticClip coughClip = HapticUtils.GetRandomClipOfMultiple("Cough", true);
                             coughClip?.Play();
+                            DoHeartbeat();
                             break;
                         case "Armored Car":
                         case "Shot by Plane":
@@ -248,6 +251,7 @@ namespace BHapticsSupport.Sections
                         case "Radioactivity":
                             HapticClip radioactivity = HapticUtils.GetRandomClipOfMultiple("Radioactivity", true);
                             radioactivity?.Play();
+                            DoHeartbeat();
                             break;
                         case "Drowned":
                         case "Suffocation":
@@ -260,11 +264,18 @@ namespace BHapticsSupport.Sections
 
                             HapticClip fireClip = HapticUtils.GetRandomClipOfMultiple("Fire", true);
                             fireClip?.Play();
+                            DoHeartbeat();
                             break;
                     }
                 }
             }
             catch { }
+        }
+
+        public static void DoHeartbeat()
+        {
+            HapticClip heartClip = HapticUtils.GetHapticClip("HeartbeatFast", true);
+            heartClip?.Play();
         }
 
         public static IEnumerator DoSuffocation(float deathRate)
