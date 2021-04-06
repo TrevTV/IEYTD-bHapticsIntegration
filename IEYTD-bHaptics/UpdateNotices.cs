@@ -19,7 +19,7 @@ namespace BHapticsSupport
             }
             catch (Exception e)
             {
-                PrintError(e.Message);
+                MelonLogger.Msg(e.Message);
                 return;
             }
 
@@ -37,20 +37,6 @@ namespace BHapticsSupport
             {
                 MelonLogger.Msg("Up to date!");
             }
-        }
-
-        public static void PrintWarning(string warning)
-        {
-            MelonLogger.Error("##############################");
-            MelonLogger.Error(warning);
-            MelonLogger.Error("##############################");
-        }
-
-        public static void PrintError(string error)
-        {
-            MelonLogger.Error("##############################");
-            MelonLogger.Error(error);
-            MelonLogger.Error("##############################");
         }
     }
 }

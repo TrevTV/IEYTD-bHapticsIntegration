@@ -29,10 +29,10 @@ namespace BHapticsSupport
 {
     public static class BuildInfo
     {
-        public const string Name = "bHaptics Integration - Beta Testing"; // Name of the Mod.  (MUST BE SET)
+        public const string Name = "bHaptics Integration"; // Name of the Mod.  (MUST BE SET)
         public const string Author = "trev"; // Author of the Mod.  (Set as null if none)
         public const string Company = null; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "0.1.1"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "1.0.0"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = "https://trevtv.github.io/ieytd/"; // Download Link for the Mod.  (Set as null if none)
     }
 
