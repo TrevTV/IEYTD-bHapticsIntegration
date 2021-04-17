@@ -13,7 +13,7 @@ namespace BHapticsSupport.Sections
 
             if (neutralized)
             {
-                Globals.Msg("Neutralized explosion!");
+                Globals.DebugMsg("Neutralized explosion!");
 
                 VestHapticClip clip = HapticUtils.GetHapticClip<VestHapticClip>("NeutralizeExplosion");
                 clip.Play();
@@ -22,7 +22,7 @@ namespace BHapticsSupport.Sections
 
         public static void GlassBreak()
         {
-            Globals.Msg("Glass broke");
+            Globals.DebugMsg("Glass broke");
 
             HapticClip clip = HapticUtils.GetHapticClip("GlassBreaking");
             clip.Play();

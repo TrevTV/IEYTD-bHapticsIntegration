@@ -24,7 +24,7 @@ namespace BHapticsSupport.Sections
         {
             if (collider.name == "Collider_GS")
             {
-                Globals.Msg("Gear changed!");
+                Globals.DebugMsg("Gear changed!");
 
                 ArmsHapticClip clip = Globals.leftHandObject == "GearShifterCollider"
                     ? HapticUtils.GetHapticClip<ArmsHapticClip>("Vibrate_L")
@@ -43,7 +43,7 @@ namespace BHapticsSupport.Sections
 
             if (entity != null && !firing)
             {
-                Globals.Msg("Cannon launched");
+                Globals.DebugMsg("Cannon launched");
 
                 bool isRightHand = Globals.lastRightHandObject == "Shared_Interactives_SpyCar_Cannon_FireLever";
                 ArmsHapticClip clip = isRightHand
@@ -56,13 +56,13 @@ namespace BHapticsSupport.Sections
 
         public static void CargoDoorOpen()
         {
-            Globals.Msg("Cargo door open");
+            Globals.DebugMsg("Cargo door open");
             GenericGameEvents.Explode(null);
         }
 
         public static void TurnIgnitionOn()
         {
-            Globals.Msg("Car ignition");
+            Globals.DebugMsg("Car ignition");
             HapticClip clip = HapticUtils.GetHapticClip("CarIgnition");
             clip.Play();
         }
@@ -75,7 +75,7 @@ namespace BHapticsSupport.Sections
         {
             if (carMoving)
             {
-                Globals.Msg("Car moving");
+                Globals.DebugMsg("Car moving");
                 HapticClip clip = HapticUtils.GetHapticClip("Driving");
                 clip.Play();
             }

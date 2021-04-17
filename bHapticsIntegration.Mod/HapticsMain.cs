@@ -152,7 +152,7 @@ namespace BHapticsSupport
                 HapticClip clip = LoaderTools.LoadTactFile(Path.GetFullPath(filePath));
                 clip.hideFlags = HideFlags.DontUnloadUnusedAsset;
                 Globals.haptics.Add(Path.GetFileNameWithoutExtension(filePath), clip);
-                Globals.Msg($"Loaded Tact {Path.GetFileNameWithoutExtension(filePath)}");
+                Globals.DebugMsg($"Loaded Tact {Path.GetFileNameWithoutExtension(filePath)}");
             }
         }
     }

@@ -9,14 +9,14 @@ namespace BHapticsSupport.Sections
     {
         public static void NeutralizeArmoredCar()
         {
-            Globals.Msg("neutralized car");
+            Globals.DebugMsg("neutralized car");
             HapticClip clip = HapticUtils.GetHapticClip("TankExplosion");
             clip.Play();
         }
 
         public static void OnPlaneDestroyed()
         {
-            Globals.Msg("plane destroyed");
+            Globals.DebugMsg("plane destroyed");
             HapticClip clip = HapticUtils.GetHapticClip("TankExplosion");
             clip.Play();
         }
@@ -25,7 +25,7 @@ namespace BHapticsSupport.Sections
         {
             if (__instance.gameObject.name == "EnvironmentRotationRoot" && animation == "TrainStopAnimation")
             {
-                Globals.Msg("stopping train");
+                Globals.DebugMsg("stopping train");
                 HapticClip clip = HapticUtils.GetHapticClip("TrainStop");
                 clip.Play();
             }
@@ -35,9 +35,9 @@ namespace BHapticsSupport.Sections
         {
             //todo: does this even work
             if (__instance.name.Contains("fx_Train_ArmoredCar_01_Fire"))
-                Globals.Msg("Armored Car Fire");
+                Globals.DebugMsg("Armored Car Fire");
             else if (__instance.name.Contains("PlaneGunTracer"))
-                Globals.Msg("Plane Fire");
+                Globals.DebugMsg("Plane Fire");
         }
     }
 }

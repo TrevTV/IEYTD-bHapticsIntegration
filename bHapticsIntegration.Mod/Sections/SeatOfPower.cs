@@ -17,7 +17,7 @@ namespace BHapticsSupport.Sections
             {
                 if (__instance.targetCollider == other)
                 {
-                    Globals.Msg("Chair seatbelt down");
+                    Globals.DebugMsg("Chair seatbelt down");
                     HapticClip clip = HapticUtils.GetHapticClip("Seatbelt");
                     clip.Play();
                 }
@@ -28,7 +28,7 @@ namespace BHapticsSupport.Sections
         {
             if (__instance.name == "Vault_Interactives_LaunchZorsChairButton_P")
             {
-                Globals.Msg("Start chair launch");
+                Globals.DebugMsg("Start chair launch");
             }
         }
 

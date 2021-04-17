@@ -23,7 +23,7 @@ namespace BHapticsSupport.Sections
 
         public static bool DeathEngShoot(LaserBlindingFlash __instance)
         {
-            Globals.Msg("Laser Flash from " + __instance.name);
+            Globals.DebugMsg("Laser Flash from " + __instance.name);
 
             HapticClip clip = HapticUtils.GetHapticClip("DeathEngineExplode");
 

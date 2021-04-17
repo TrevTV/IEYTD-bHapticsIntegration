@@ -14,12 +14,12 @@ namespace BHapticsSupport.Sections
 
         public static void MachineXCoreInit(MysteryMachineActiveState __instance)
         {
-            Globals.Msg("machine core init");
+            Globals.DebugMsg("machine core init");
             int coreIndex = ReflectionTools.GetValueFromObject<int>(__instance, "_selectedCoreIndex");
             if (!__instance.machineCores[coreIndex].coreDestroyed)
             {
                 activeMachineCore = __instance.machineCores[coreIndex];
-                Globals.Msg("New core active: " + activeMachineCore.name);
+                Globals.DebugMsg("New core active: " + activeMachineCore.name);
             }
         }
 
@@ -27,13 +27,13 @@ namespace BHapticsSupport.Sections
         {
             if (__instance == activeMachineCore)
             {
-                Globals.Msg("updating active core: " + __instance.name);
+                Globals.DebugMsg("updating active core: " + __instance.name);
             }
         }
 
         public static void DisableBearAttack()
         {
-            Globals.Msg("Bear was disabled via explosion");
+            Globals.DebugMsg("Bear was disabled via explosion");
 
             HapticClip clip = HapticUtils.GetHapticClip("BearExplosion");
             clip.Play();
@@ -41,12 +41,12 @@ namespace BHapticsSupport.Sections
 
         public static void BeginDeerGas()
         {
-            Globals.Msg("Deer go brrrr");
+            Globals.DebugMsg("Deer go brrrr");
         }
 
         public static void BeginEscapeSequence(EscapeRopeBarState __instance)
         {
-            Globals.Msg("escaping pog");
+            Globals.DebugMsg("escaping pog");
 
             /*HapticClip clip = HapticUtils.GetHapticClip("LodgeExit");
 

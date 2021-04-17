@@ -20,7 +20,7 @@ namespace BHapticsSupport
 
         public static System.Random systemRandom = new System.Random();
 
-        public static void Msg(string str)
+        public static void DebugMsg(string str)
         {
             #if LOG
             MelonLogger.Msg(str);

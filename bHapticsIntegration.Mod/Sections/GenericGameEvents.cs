@@ -31,7 +31,7 @@ namespace BHapticsSupport.Sections
                 if (__instance.animationComponent.isPlaying || __instance.currentAmmo <= 0)
                     return;
 
-                Globals.Msg("Gun fire from " + vrInput);
+                Globals.DebugMsg("Gun fire from " + vrInput);
 
                 HapticClip clip = vrInput.name.Contains("Left")
                     ? HapticUtils.GetHapticClip("Pistol_small_L")
@@ -43,7 +43,7 @@ namespace BHapticsSupport.Sections
 
         public static void ToggleCutterState(VRInput vrInput)
         {
-            Globals.Msg("Toggling knife from " + vrInput);
+            Globals.DebugMsg("Toggling knife from " + vrInput);
 
             ArmsHapticClip clip = vrInput.name.Contains("Left")
                 ? HapticUtils.GetHapticClip<ArmsHapticClip>("Vibrate_L")
@@ -56,7 +56,7 @@ namespace BHapticsSupport.Sections
         {
             if (!((LevelManager.Instance.playerEntity.transform.position - __instance.transform.position).magnitude <= __instance.GetData().explosive.radius))
             {
-                Globals.Msg("ambient explosion");
+                Globals.DebugMsg("ambient explosion");
                 Explode(null, true);
             }
         }
@@ -76,7 +76,7 @@ namespace BHapticsSupport.Sections
                         if (screwState.PairedScrewdriver == null)
                         {
                             string hand = Globals.leftHandObject.Contains("Screwdriver") ? " left hand" : " right hand";
-                            Globals.Msg("unscrewing " + go.name + " with " + hand);
+                            Globals.DebugMsg("unscrewing " + go.name + " with " + hand);
                         }
                     }
                 }
@@ -135,7 +135,7 @@ namespace BHapticsSupport.Sections
 
         public static void Stun(PlayerAliveState __instance)
         {
-            Globals.Msg("stunned");
+            Globals.DebugMsg("stunned");
 
             HapticClip clip = HapticUtils.GetHapticClip("StunGrenade");
             PlayerAliveStateData playerAliveStateData = ReflectionTools.GetValueFromObject<PlayerAliveStateData>(__instance, "_data");
@@ -152,7 +152,7 @@ namespace BHapticsSupport.Sections
             // essentially, if `stun` is null, it'll return false
             if (explosiveProperty?.stun ?? false) return;
 
-            Globals.Msg("Explode!");
+            Globals.DebugMsg("Explode!");
 
             HapticClip vestClip = HapticUtils.GetHapticClip(ambient ? "AmbientExplosion" : "StunGrenade");
             vestClip.Play();
@@ -168,7 +168,7 @@ namespace BHapticsSupport.Sections
 
         public static void WearObject(ActiveInteractableEntity entity, Transform joint)
         {
-            Globals.Msg("Wearing " + entity.name);
+            Globals.DebugMsg("Wearing " + entity.name);
 
             if (entity.name.Contains("Hat") || entity.name.Contains("Helmet"))
             {
@@ -190,12 +190,12 @@ namespace BHapticsSupport.Sections
 
         public static void Eat(ActiveInteractableEntity entity, Edible edible)
         {
-            Globals.Msg("Eat " + entity.name);
+            Globals.DebugMsg("Eat " + entity.name);
         }
 
         public static void StartDrinking(LiquidContainerPickUpState pickUpState)
         {
-            Globals.Msg("Drinking of " + pickUpState.name);
+            Globals.DebugMsg("Drinking of " + pickUpState.name);
         }
 
         public static void ProcessDamageHaptics()
@@ -205,7 +205,7 @@ namespace BHapticsSupport.Sections
                 PlayerDamageData data = LevelManager.Instance.playerEntity.DamageEffects[0];
                 if (data)
                 {
-                    Globals.Msg($"applying damage {data.deathText} with rate of {data.damageRate}");
+                    Globals.DebugMsg($"applying damage {data.deathText} with rate of {data.damageRate}");
 
                     if (Globals.applyDamageRepeats.ContainsKey(data.deathText))
                         Globals.applyDamageRepeats[data.deathText]++;
@@ -294,7 +294,7 @@ namespace BHapticsSupport.Sections
 
         public static void DoDeath(PlayerDamageData killingBlow)
         {
-            Globals.Msg($"killed by {killingBlow.deathText} with a value of {killingBlow.damageRate}");
+            Globals.DebugMsg($"killed by {killingBlow.deathText} with a value of {killingBlow.damageRate}");
             Globals.applyDamageRepeats[killingBlow.deathText] = 0;
         }
 
