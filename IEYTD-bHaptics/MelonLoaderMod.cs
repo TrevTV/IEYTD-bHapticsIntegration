@@ -42,6 +42,10 @@ namespace BHapticsSupport
         {
             //UpdateNotices.RunUpdateCheck();
 
+            MelonLogger.Msg("Thank you for using my mod");
+            MelonLogger.Msg("If you like it, please consider donating here");
+            MelonLogger.Msg("https://ko-fi.com/trevtv");
+
             LoadTacts();
 
             #region Generic Game Events
