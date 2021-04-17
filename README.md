@@ -4,10 +4,16 @@
 [![discord](https://trevtv.github.io/assets/images/discordbutton_sm.svg)](https://discord.gg/tsbFPERwjS)
 
 ## How To Install
-### Video Tutorial
+
+### Automatic
+ - TODO
+
+### Manual
+
+#### Video Tutorial
 [![Video Tutorial](https://i.imgur.com/YKbmnef.png)](http://www.youtube.com/watch?v=XtIIeOzcORs "I Expect You To Die - bHaptics Integration Mod Installation")
 
-### Text Tutorial
+#### Text Tutorial
 1. Download the latest MelonLoader installer from [here](https://github.com/LavaGang/MelonLoader.Installer/releases/)
 2. Open the installer, go to settings, and make sure that `Show ALPHA Pre-Releases` is checked
 3. In Steam, right click the game, and under Manage, select `Browse Local Files` ![](https://i.imgur.com/fK4N0SF.png)
