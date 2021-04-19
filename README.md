@@ -44,6 +44,7 @@ Root
 
 ## Todo
  - The GenericGameEvents class could probably be improved, it currently contains code for other levels due to how damage is handled
+ - Some of the object grabbing handling could be improved
 
 ## Thanks
  - Everyone at bHaptics
